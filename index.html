@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MartiniStore | Accesorios, Ropa y Joyería</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de FontAwesome para el carrito, modo noche y WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER / ENCABEZADO -->
+    <header class="header">
+        <div class="logo-container">
+            <h1>Martini<span>Store</span></h1>
+            <p>Elegancia, moda, ropa y joyería exclusiva</p>
+        </div>
+        <div class="header-actions">
+            <!-- Botón Modo Nocturno -->
+            <button id="theme-toggle" aria-label="Cambiar modo oscuro">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <!-- Botón del Carrito -->
+            <button id="cart-btn" aria-label="Ver carrito">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- SLIDER / BANNER SUPERIOR ROTATIVO -->
+    <section class="hero-slider">
+        <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=80');">
+            <div class="slide-content">
+                <h2>NUEVA COLECCIÓN</h2>
+                <p>Brilla con nuestra joyería y accesorios únicos</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80');">
+            <div class="slide-content">
+                <h2>MODA & TENDENCIA</h2>
+                <p>Ropa y calzado en tendencia para destacar siempre</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=80');">
+            <div class="slide-content">
+                <h2>DETALLES ESPECIALES</h2>
+                <p>Collares, aretes, pulseras y relicarios inolvidables</p>
+            </div>
+        </div>
+        <!-- Controles del slider -->
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- FILTRO DE CATEGORÍAS -->
+    <nav class="categories-nav">
+        <button class="cat-btn active" data-filter="all">Todos</button>
+        <button class="cat-btn" data-filter="joyeria">Joyería</button>
+        <button class="cat-btn" data-filter="ropa">Ropa</button>
+        <button class="cat-btn" data-filter="calzado">Calzado</button>
+        <button class="cat-btn" data-filter="accesorios">Accesorios</button>
+    </nav>
+
+    <!-- SECCIÓN DE PRODUCTOS -->
+    <main class="main-container">
+        <h2>Catálogo Destacado</h2>
+        <div class="products-grid" id="products-grid">
+            <!-- Los productos se inyectan dinámicamente desde JavaScript para fácil edición -->
+        </div>
+    </main>
+
+    <!-- MODAL / VENTANA DEL CARRITO DE COMPRAS -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Factura de tu Compra</h3>
+                <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Aquí se listan los productos añadidos -->
+                <p class="empty-cart-text">Tu carrito está vacío</p>
+            </div>
+            <div class="cart-footer">
+                <div class="total-container">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button id="checkout-whatsapp" class="checkout-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar Factura por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 MartiniStore. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
